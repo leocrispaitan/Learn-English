@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Welcome Screen - English Mastery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display antialiased">
+<div class="relative flex h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-hidden">
+<!-- Status Bar Spacer (iOS Style) -->
+<div class="h-12 w-full"></div>
+<!-- Top Navigation Area -->
+<div class="flex items-center justify-between px-6 py-2">
+<div class="flex items-center gap-2">
+<div class="text-primary" data-icon="Language">
+<span class="material-symbols-outlined text-3xl">language</span>
+</div>
+<span class="text-[#111418] dark:text-white font-bold text-lg tracking-tight">LinguaFlow</span>
+</div>
+<button class="text-primary font-semibold text-sm">Log In</button>
+</div>
+<!-- Main Content Wrapper -->
+<div class="flex flex-col flex-1 items-center justify-center px-6">
+<!-- Illustration Area -->
+<div class="relative w-full max-w-[320px] aspect-square mb-8 flex items-center justify-center">
+<!-- Abstract Decorative Background -->
+<div class="absolute inset-0 bg-primary/10 dark:bg-primary/20 rounded-full scale-90"></div>
+<!-- Character Image Replacement (SVG Representation) -->
+<div class="relative z-10 w-full h-full bg-center bg-no-repeat bg-contain" data-alt="Friendly character waving hello with a smile" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCo2kaURbF5KDl-XeVbyysiX0n9hZi_DUc9NJAD0RY1RzhQjQOkf6twCpM1bN8QOISWzIXutkm6J8NTS__DoMCsfA0GgMoCZViumXec4Gy7etgC1jVtl04lH1BqI8319ard3uB0o8BA_1ny2JaQmTkVYzelwZ9jf3Jf9EIMsmA-D9K4YJ2LnSxge8HVvBrubznRW6F5jPUXgDDqmlRdUWus9ecbc2IMMlTFPj86cnwTPhksUjQfbmk0scqyMvq4dz7HXuGgdoNE2ZY');">
+</div>
+</div>
+<!-- Text Content -->
+<div class="text-center space-y-4 max-w-sm">
+<h1 class="text-[#111418] dark:text-white text-3xl font-bold leading-tight tracking-[-0.02em]">
+                    Your journey to English mastery starts here!
+                </h1>
+<p class="text-[#4e5d71] dark:text-gray-400 text-base font-normal leading-relaxed">
+                    Master grammar, expand your vocabulary, and practice speaking through interactive lessons tailored to your level.
+                </p>
+</div>
+</div>
+<!-- Action Area -->
+<div class="px-6 pb-12 pt-4 space-y-4">
+<!-- Progress Indicators (Dots) -->
+<div class="flex justify-center gap-2 mb-6">
+<div class="h-2 w-6 rounded-full bg-primary"></div>
+<div class="h-2 w-2 rounded-full bg-gray-300 dark:bg-gray-700"></div>
+<div class="h-2 w-2 rounded-full bg-gray-300 dark:bg-gray-700"></div>
+</div>
+<!-- Start Learning Button -->
+<button class="w-full flex cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-5 bg-primary text-white text-lg font-bold leading-normal tracking-[0.015em] shadow-lg shadow-primary/25 active:scale-[0.98] transition-transform">
+<span class="truncate">Start Learning</span>
+<span class="material-symbols-outlined ml-2 text-xl">arrow_forward</span>
+</button>
+<!-- Secondary Action -->
+<p class="text-center text-sm text-gray-500 dark:text-gray-500">
+                Join over 2 million students worldwide
+            </p>
+</div>
+<!-- Home Indicator Spacer (iOS Style) -->
+<div class="h-8 w-full flex justify-center items-end pb-2">
+<div class="w-32 h-1.5 bg-gray-300 dark:bg-gray-700 rounded-full"></div>
+</div>
+</div>
+</body></html>

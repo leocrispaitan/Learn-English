@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SpeakUp</string>
+    <string name="app_name_full">English Learner</string>
+    
+    <!-- Login Screen -->
+    <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="welcome_back">Welcome Back!</string>
+    <string name="continue_journey">Continue your English learning journey today.</string>
+    <string name="email_address">Email Address</string>
+    <string name="email_hint">name@example.com</string>
+    <string name="password">Password</string>
+    <string name="password_hint">••••••••</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="login_now">Login Now</string>
+    <string name="or_continue_with">Or continue with</string>
+    <string name="google_account">Sign in with Google</string>
+    <string name="dont_have_account">Don\'t have an account?</string>
+    
+    <!-- Content Descriptions -->
+    <string name="back_button">Back</string>
+    <string name="book_icon">Book icon</string>
+    <string name="email_icon">Email</string>
+    <string name="lock_icon">Lock</string>
+    <string name="toggle_password_visibility">Toggle password visibility</string>
+    <string name="google_icon">Google</string>
+    
+    <!-- Validation Messages -->
+    <string name="error_empty_email">Please enter your email address</string>
+    <string name="error_invalid_email">Please enter a valid email address</string>
+    <string name="error_empty_password">Please enter your password</string>
+    <string name="error_short_password">Password must be at least 6 characters</string>
+    
+    <!-- Success Messages -->
+    <string name="login_success">Login successful!</string>
+    
+    <!-- Info Messages -->
+    <string name="feature_coming_soon">This feature is coming soon!</string>
+</resources>

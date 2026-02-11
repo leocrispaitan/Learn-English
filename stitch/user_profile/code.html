@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Profile - English Learning App</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .ios-tab-shadow {
+            box-shadow: 0 -1px 10px rgba(0,0,0,0.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-screen w-full flex-col overflow-x-hidden max-w-[480px] mx-auto bg-white dark:bg-background-dark shadow-xl">
+<!-- Top App Bar -->
+<div class="flex items-center bg-white dark:bg-background-dark px-6 pt-6 pb-2 justify-between sticky top-0 z-10">
+<h2 class="text-background-dark dark:text-white text-xl font-bold leading-tight tracking-tight">Profile</h2>
+<div class="flex items-center justify-end">
+<button class="flex items-center justify-center rounded-full w-10 h-10 bg-background-light dark:bg-gray-800 text-primary hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+</button>
+</div>
+</div>
+<!-- Profile Header Section -->
+<div class="flex p-6 @container">
+<div class="flex w-full flex-col gap-4 items-center">
+<div class="flex gap-4 flex-col items-center">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-32 w-32 border-4 border-white dark:border-gray-800 shadow-md" data-alt="Professional portrait of a smiling young male student" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBfNfmdxerH0TjMa04eJSGm4OJR4VHvvKq1xn4IxIngP0KVCKI_7zsUCSPEF1zJ3LuUzjSOjm7rsW0MtUcM_xmhlCJiUMCQAO_tMV52L2G2aaa6nDzeEtc291t1HQhcKSpwaUNK4mOXgG2GwczlRSH-JusWgLolh9NooTgy2xIwf7szhs-M6L0KSOEmMfa5iOAldgPdy8QWK0pjJLERA9HYjY8FL7fnHK3c6CvqPtbxpmiJJa-34bR7E8ajPrnr1eYm-2AcuOlSwg4");'>
+</div>
+<div class="absolute bottom-1 right-1 bg-primary text-white p-1 rounded-full border-2 border-white dark:border-gray-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px] font-bold">verified</span>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center">
+<p class="text-background-dark dark:text-white text-2xl font-bold leading-tight tracking-tight text-center">Alex Johnson</p>
+<div class="mt-2 inline-flex items-center px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-semibold">
+                            Intermediate - B1
+                        </div>
+<p class="text-gray-500 dark:text-gray-400 text-sm mt-2 font-normal">Member since Jan 2024</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Stats Grid -->
+<div class="flex flex-wrap gap-3 px-6 py-3">
+<div class="flex min-w-[100px] flex-1 flex-col gap-1 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 p-4 items-center text-center shadow-sm">
+<span class="material-symbols-outlined text-orange-500 text-[24px]">local_fire_department</span>
+<p class="text-background-dark dark:text-white text-xl font-bold leading-tight">12</p>
+<p class="text-gray-500 text-[10px] uppercase font-bold tracking-wider">Day Streak</p>
+</div>
+<div class="flex min-w-[100px] flex-1 flex-col gap-1 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 p-4 items-center text-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">menu_book</span>
+<p class="text-background-dark dark:text-white text-xl font-bold leading-tight">1,240</p>
+<p class="text-gray-500 text-[10px] uppercase font-bold tracking-wider">Words</p>
+</div>
+<div class="flex min-w-[100px] flex-1 flex-col gap-1 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 p-4 items-center text-center shadow-sm">
+<span class="material-symbols-outlined text-green-500 text-[24px]">emoji_events</span>
+<p class="text-background-dark dark:text-white text-xl font-bold leading-tight">45</p>
+<p class="text-gray-500 text-[10px] uppercase font-bold tracking-wider">Lessons</p>
+</div>
+</div>
+<!-- Section: My Goals -->
+<div class="flex items-center justify-between px-6 pt-6 pb-2">
+<h3 class="text-background-dark dark:text-white text-lg font-bold leading-tight tracking-tight">My Goals</h3>
+<button class="text-primary text-sm font-bold">Edit</button>
+</div>
+<div class="flex flex-col gap-3 px-6 pb-24">
+<!-- Goal 1 -->
+<div class="flex items-center gap-4 bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-xl p-4 shadow-sm">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-12">
+<span class="material-symbols-outlined text-[24px]">auto_stories</span>
+</div>
+<div class="flex flex-col flex-1">
+<div class="flex justify-between items-center mb-1">
+<p class="text-background-dark dark:text-white text-base font-semibold leading-normal">Daily Vocabulary</p>
+<p class="text-primary text-xs font-bold">75%</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex-1 h-2 overflow-hidden rounded-full bg-gray-100 dark:bg-gray-800">
+<div class="h-full rounded-full bg-primary" style="width: 75%;"></div>
+</div>
+<p class="text-gray-500 text-xs font-medium">15/20</p>
+</div>
+</div>
+</div>
+<!-- Goal 2 -->
+<div class="flex items-center gap-4 bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-xl p-4 shadow-sm">
+<div class="text-orange-500 flex items-center justify-center rounded-lg bg-orange-100 dark:bg-orange-900/30 shrink-0 size-12">
+<span class="material-symbols-outlined text-[24px]">mic</span>
+</div>
+<div class="flex flex-col flex-1">
+<div class="flex justify-between items-center mb-1">
+<p class="text-background-dark dark:text-white text-base font-semibold leading-normal">Speaking Practice</p>
+<p class="text-orange-500 text-xs font-bold">40%</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex-1 h-2 overflow-hidden rounded-full bg-gray-100 dark:bg-gray-800">
+<div class="h-full rounded-full bg-orange-500" style="width: 40%;"></div>
+</div>
+<p class="text-gray-500 text-xs font-medium">4/10m</p>
+</div>
+</div>
+</div>
+<!-- Goal 3 -->
+<div class="flex items-center gap-4 bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-xl p-4 shadow-sm">
+<div class="text-green-500 flex items-center justify-center rounded-lg bg-green-100 dark:bg-green-900/30 shrink-0 size-12">
+<span class="material-symbols-outlined text-[24px]">history_edu</span>
+</div>
+<div class="flex flex-col flex-1">
+<div class="flex justify-between items-center mb-1">
+<p class="text-background-dark dark:text-white text-base font-semibold leading-normal">Weekly Grammar Quiz</p>
+<p class="text-green-500 text-xs font-bold">100%</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex-1 h-2 overflow-hidden rounded-full bg-gray-100 dark:bg-gray-800">
+<div class="h-full rounded-full bg-green-500" style="width: 100%;"></div>
+</div>
+<p class="text-gray-500 text-xs font-medium">1/1</p>
+</div>
+</div>
+</div>
+<button class="w-full flex items-center justify-center gap-2 py-4 mt-2 border-2 border-dashed border-gray-200 dark:border-gray-800 rounded-xl text-gray-400 hover:text-primary hover:border-primary transition-all">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="font-bold">Add New Goal</span>
+</button>
+</div>
+<!-- iOS Style Bottom Tab Bar -->
+<div class="fixed bottom-0 w-full max-w-[480px] bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-t border-gray-200 dark:border-gray-800 flex justify-around py-3 pb-8 ios-tab-shadow">
+<button class="flex flex-col items-center text-gray-400">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-bold mt-1">Home</span>
+</button>
+<button class="flex flex-col items-center text-gray-400">
+<span class="material-symbols-outlined">school</span>
+<span class="text-[10px] font-bold mt-1">Learn</span>
+</button>
+<button class="flex flex-col items-center text-gray-400">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="text-[10px] font-bold mt-1">Ranking</span>
+</button>
+<button class="flex flex-col items-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">person</span>
+<span class="text-[10px] font-bold mt-1">Profile</span>
+</button>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Learning Progress</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white transition-colors duration-200">
+<div class="relative flex min-h-screen w-full flex-col bg-background-light dark:bg-background-dark max-w-[430px] mx-auto overflow-x-hidden">
+<!-- Top App Bar (iOS style) -->
+<header class="sticky top-0 z-50 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 py-3 justify-between">
+<div class="text-[#111418] dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/5 cursor-pointer">
+<span class="material-symbols-outlined">arrow_back_ios</span>
+</div>
+<h2 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Learning Progress</h2>
+<div class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/5 cursor-pointer">
+<span class="material-symbols-outlined">settings</span>
+</div>
+</header>
+<!-- Profile Header Section -->
+<section class="flex flex-col p-4">
+<div class="flex items-center gap-4 bg-white dark:bg-[#1c2633] p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-20 w-20 border-2 border-primary" data-alt="User profile avatar smiling young man" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC30GxAgL0NFseAJg5CNXJqNVdHNvoOmaMy3R9SD_espmRGBoX2K8-ICU56yJ3TWpBgaeV_mvVjAadBT9r81Q8m8rMsswhUeM5Iq5wRL18ylJ3EvOUJrDetSR_Z4L4mXoxzjhK4Q71VH-tmKKOuV926vvAtuK2XWZgSkapdtsYu91WuHCPlXzloz0PL9G9B2h-HxptzgcIGu7PCNnS3asdIJ4N0_MrBvhSEccHBl89b_3SGUuMLWj3uqM_Zalm8sfywx8oWaFP5SAg");'>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded-full border-2 border-white dark:border-[#1c2633]">
+                        LVL 12
+                    </div>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-[#111418] dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">Alex Johnson</p>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="bg-primary/10 text-primary text-xs font-semibold px-2 py-0.5 rounded">A2</span>
+<p class="text-[#617289] dark:text-gray-400 text-sm font-normal">Pre-Intermediate</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Overview Cards -->
+<div class="grid grid-cols-2 gap-4 px-4">
+<div class="flex flex-col gap-2 rounded-xl p-5 bg-white dark:bg-[#1c2633] shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-lg">bolt</span>
+<p class="text-[#617289] dark:text-gray-400 text-xs font-medium uppercase tracking-wider">Total XP</p>
+</div>
+<p class="text-[#111418] dark:text-white text-2xl font-bold leading-tight">1,250</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-5 bg-white dark:bg-[#1c2633] shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-2 text-orange-500">
+<span class="material-symbols-outlined text-lg">local_fire_department</span>
+<p class="text-[#617289] dark:text-gray-400 text-xs font-medium uppercase tracking-wider">Day Streak</p>
+</div>
+<p class="text-[#111418] dark:text-white text-2xl font-bold leading-tight">12 Days</p>
+</div>
+</div>
+<!-- Progress Bar Section -->
+<section class="p-4 mt-2">
+<div class="bg-white dark:bg-[#1c2633] rounded-xl p-5 shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex justify-between items-end mb-3">
+<div class="flex flex-col">
+<p class="text-[#111418] dark:text-white text-sm font-bold uppercase tracking-tight">Level Progress</p>
+<p class="text-[#617289] dark:text-gray-400 text-xs font-normal">Next Level: B1 Intermediate</p>
+</div>
+<p class="text-primary text-sm font-bold">75%</p>
+</div>
+<div class="w-full bg-gray-100 dark:bg-gray-700 h-3 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full transition-all duration-1000" style="width: 75%;"></div>
+</div>
+<div class="flex justify-between mt-2">
+<p class="text-[#617289] dark:text-gray-400 text-[10px] font-medium uppercase">750 XP EARNED</p>
+<p class="text-[#617289] dark:text-gray-400 text-[10px] font-medium uppercase">250 XP TO GO</p>
+</div>
+</div>
+</section>
+<!-- Weekly Activity Chart -->
+<section class="p-4">
+<div class="bg-white dark:bg-[#1c2633] rounded-xl p-5 shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-[#111418] dark:text-white text-base font-bold">Weekly Study Time</h3>
+<div class="flex items-center gap-1 text-[#617289] dark:text-gray-400 text-xs">
+<span>This Week</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</div>
+</div>
+<div class="flex items-end justify-between h-32 px-2">
+<!-- Monday -->
+<div class="flex flex-col items-center gap-2 group cursor-pointer">
+<div class="relative w-8 bg-primary/20 dark:bg-primary/10 rounded-t-md h-[40px] group-hover:bg-primary/40 transition-colors">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-md h-[30px]"></div>
+</div>
+<span class="text-[10px] text-[#617289] dark:text-gray-400 font-medium">Mon</span>
+</div>
+<!-- Tuesday -->
+<div class="flex flex-col items-center gap-2 group cursor-pointer">
+<div class="relative w-8 bg-primary/20 dark:bg-primary/10 rounded-t-md h-[70px] group-hover:bg-primary/40 transition-colors">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-md h-[60px]"></div>
+</div>
+<span class="text-[10px] text-[#617289] dark:text-gray-400 font-medium">Tue</span>
+</div>
+<!-- Wednesday -->
+<div class="flex flex-col items-center gap-2 group cursor-pointer">
+<div class="relative w-8 bg-primary/20 dark:bg-primary/10 rounded-t-md h-[110px] group-hover:bg-primary/40 transition-colors">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-md h-[100px]"></div>
+</div>
+<span class="text-[10px] text-[#617289] dark:text-gray-400 font-medium">Wed</span>
+</div>
+<!-- Thursday -->
+<div class="flex flex-col items-center gap-2 group cursor-pointer">
+<div class="relative w-8 bg-primary/20 dark:bg-primary/10 rounded-t-md h-[55px] group-hover:bg-primary/40 transition-colors">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-md h-[45px]"></div>
+</div>
+<span class="text-[10px] text-[#617289] dark:text-gray-400 font-medium">Thu</span>
+</div>
+<!-- Friday -->
+<div class="flex flex-col items-center gap-2 group cursor-pointer">
+<div class="relative w-8 bg-primary/20 dark:bg-primary/10 rounded-t-md h-[90px] group-hover:bg-primary/40 transition-colors">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-md h-[80px]"></div>
+</div>
+<span class="text-[10px] text-[#617289] dark:text-gray-400 font-medium">Fri</span>
+</div>
+<!-- Saturday -->
+<div class="flex flex-col items-center gap-2 group cursor-pointer">
+<div class="relative w-8 bg-primary/20 dark:bg-primary/10 rounded-t-md h-[30px] group-hover:bg-primary/40 transition-colors">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-md h-[20px]"></div>
+</div>
+<span class="text-[10px] text-[#617289] dark:text-gray-400 font-medium">Sat</span>
+</div>
+<!-- Sunday -->
+<div class="flex flex-col items-center gap-2 group cursor-pointer">
+<div class="relative w-8 bg-primary/20 dark:bg-primary/10 rounded-t-md h-[15px] group-hover:bg-primary/40 transition-colors">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-md h-[5px]"></div>
+</div>
+<span class="text-[10px] text-[#617289] dark:text-gray-400 font-medium">Sun</span>
+</div>
+</div>
+<div class="mt-6 flex items-center gap-4 text-xs">
+<div class="flex items-center gap-1.5">
+<span class="size-2 rounded-full bg-primary"></span>
+<span class="text-[#617289] dark:text-gray-400 font-medium">15.4h Total</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="size-2 rounded-full bg-primary/30"></span>
+<span class="text-[#617289] dark:text-gray-400 font-medium">Goal: 20h</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Achievements Section -->
+<section class="p-4 mb-6">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-[#111418] dark:text-white text-[18px] font-bold">Unlocked Achievements</h3>
+<button class="text-primary text-sm font-semibold">See All</button>
+</div>
+<div class="grid grid-cols-3 gap-3">
+<!-- Achievement 1 -->
+<div class="flex flex-col items-center gap-2 p-3 bg-white dark:bg-[#1c2633] rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="size-14 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center text-yellow-600 shadow-inner">
+<span class="material-symbols-outlined text-3xl">verified</span>
+</div>
+<span class="text-[10px] font-bold text-center dark:text-gray-200">Vocab Master</span>
+</div>
+<!-- Achievement 2 -->
+<div class="flex flex-col items-center gap-2 p-3 bg-white dark:bg-[#1c2633] rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="size-14 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 shadow-inner">
+<span class="material-symbols-outlined text-3xl">emoji_events</span>
+</div>
+<span class="text-[10px] font-bold text-center dark:text-gray-200">First Steps</span>
+</div>
+<!-- Achievement 3 -->
+<div class="flex flex-col items-center gap-2 p-3 bg-white dark:bg-[#1c2633] rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="size-14 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600 shadow-inner">
+<span class="material-symbols-outlined text-3xl">military_tech</span>
+</div>
+<span class="text-[10px] font-bold text-center dark:text-gray-200">Speed Demon</span>
+</div>
+<!-- Achievement 4 (Locked/Grayed) -->
+<div class="flex flex-col items-center gap-2 p-3 bg-gray-50 dark:bg-[#151d27] rounded-xl opacity-60">
+<div class="size-14 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center text-gray-400">
+<span class="material-symbols-outlined text-3xl">lock</span>
+</div>
+<span class="text-[10px] font-medium text-center text-gray-500">Grammar King</span>
+</div>
+<!-- Achievement 5 (Locked/Grayed) -->
+<div class="flex flex-col items-center gap-2 p-3 bg-gray-50 dark:bg-[#151d27] rounded-xl opacity-60">
+<div class="size-14 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center text-gray-400">
+<span class="material-symbols-outlined text-3xl">lock</span>
+</div>
+<span class="text-[10px] font-medium text-center text-gray-500">7-Day Hero</span>
+</div>
+<!-- Achievement 6 (Locked/Grayed) -->
+<div class="flex flex-col items-center gap-2 p-3 bg-gray-50 dark:bg-[#151d27] rounded-xl opacity-60">
+<div class="size-14 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center text-gray-400">
+<span class="material-symbols-outlined text-3xl">lock</span>
+</div>
+<span class="text-[10px] font-medium text-center text-gray-500">Bookworm</span>
+</div>
+</div>
+</section>
+<!-- Bottom Navigation Bar (iOS Style) -->
+<nav class="mt-auto border-t border-gray-200 dark:border-gray-800 bg-white/95 dark:bg-[#1c2633]/95 backdrop-blur-lg px-6 py-2 pb-6 flex justify-between items-center">
+<div class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px]">Home</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">school</span>
+<span class="text-[10px]">Learn</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">leaderboard</span>
+<span class="text-[10px] font-bold">Progress</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px]">Profile</span>
+</div>
+</nav>
+</div>
+</body></html>

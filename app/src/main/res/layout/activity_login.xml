@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/spacing_xl">
+
+        <!-- Top Toolbar -->
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="@dimen/spacing_md"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:src="@drawable/ic_arrow_back"
+            android:padding="12dp"
+            android:contentDescription="@string/back_button"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvAppTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name_full"
+            android:textAppearance="@style/TextAppearance.SpeakUp.Title"
+            android:gravity="center"
+            android:layout_marginEnd="48dp"
+            app:layout_constraintStart_toEndOf="@id/btnBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btnBack"
+            app:layout_constraintBottom_toBottomOf="@id/btnBack" />
+
+        <!-- Tab Switcher (Login / Sign Up) -->
+        <LinearLayout
+            android:id="@+id/tabContainer"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="@dimen/spacing_lg"
+            android:layout_marginEnd="@dimen/spacing_lg"
+            android:layout_marginTop="@dimen/spacing_lg"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_tab_container"
+            android:padding="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnBack">
+
+            <TextView
+                android:id="@+id/tabLogin"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/login"
+                android:textAppearance="@style/TextAppearance.SpeakUp.Body"
+                android:textColor="@color/primary"
+                android:gravity="center"
+                android:background="@drawable/bg_tab_selected"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tabSignUp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/sign_up"
+                android:textAppearance="@style/TextAppearance.SpeakUp.Body"
+                android:textColor="@color/text_gray"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <!-- Icon Container -->
+        <View
+            android:id="@+id/iconBackground"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="@dimen/spacing_xl"
+            android:background="@drawable/bg_icon_container"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tabContainer" />
+
+        <ImageView
+            android:id="@+id/iconBook"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_book"
+            android:contentDescription="@string/book_icon"
+            app:layout_constraintStart_toStartOf="@id/iconBackground"
+            app:layout_constraintEnd_toEndOf="@id/iconBackground"
+            app:layout_constraintTop_toTopOf="@id/iconBackground"
+            app:layout_constraintBottom_toBottomOf="@id/iconBackground" />
+
+        <!-- Welcome Heading -->
+        <TextView
+            android:id="@+id/tvWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_lg"
+            android:text="@string/welcome_back"
+            android:textAppearance="@style/TextAppearance.SpeakUp.Heading"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iconBackground" />
+
+        <!-- Subtitle -->
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_xl"
+            android:layout_marginEnd="@dimen/spacing_xl"
+            android:layout_marginTop="@dimen/spacing_sm"
+            android:text="@string/continue_journey"
+            android:textAppearance="@style/TextAppearance.SpeakUp.Subtitle"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvWelcome" />
+
+        <!-- Email Address Label -->
+        <TextView
+            android:id="@+id/tvEmailLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_lg"
+            android:layout_marginEnd="@dimen/spacing_lg"
+            android:layout_marginTop="@dimen/spacing_xl"
+            android:text="@string/email_address"
+            android:textAppearance="@style/TextAppearance.SpeakUp.Label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSubtitle" />
+
+        <!-- Email Input Field -->
+        <RelativeLayout
+            android:id="@+id/emailContainer"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/input_height"
+            android:layout_marginStart="@dimen/spacing_lg"
+            android:layout_marginEnd="@dimen/spacing_lg"
+            android:layout_marginTop="@dimen/spacing_sm"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvEmailLabel">
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_input_field"
+                android:paddingStart="48dp"
+                android:paddingEnd="@dimen/spacing_md"
+                android:hint="@string/email_hint"
+                android:inputType="textEmailAddress"
+                android:textAppearance="@style/TextAppearance.SpeakUp.Body"
+                android:textColorHint="@color/text_gray"
+                android:maxLines="1"
+                android:importantForAutofill="no" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/spacing_md"
+                android:src="@drawable/ic_email"
+                android:contentDescription="@string/email_icon" />
+        </RelativeLayout>
+
+        <!-- Password Label -->
+        <TextView
+            android:id="@+id/tvPasswordLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_lg"
+            android:layout_marginEnd="@dimen/spacing_lg"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:text="@string/password"
+            android:textAppearance="@style/TextAppearance.SpeakUp.Label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/emailContainer" />
+
+        <!-- Password Input Field -->
+        <RelativeLayout
+            android:id="@+id/passwordContainer"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/input_height"
+            android:layout_marginStart="@dimen/spacing_lg"
+            android:layout_marginEnd="@dimen/spacing_lg"
+            android:layout_marginTop="@dimen/spacing_sm"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvPasswordLabel">
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_input_field"
+                android:paddingStart="48dp"
+                android:paddingEnd="48dp"
+                android:hint="@string/password_hint"
+                android:inputType="textPassword"
+                android:textAppearance="@style/TextAppearance.SpeakUp.Body"
+                android:textColorHint="@color/text_gray"
+                android:maxLines="1"
+                android:importantForAutofill="no" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/spacing_md"
+                android:src="@drawable/ic_lock"
+                android:contentDescription="@string/lock_icon" />
+
+            <ImageView
+                android:id="@+id/btnTogglePassword"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/spacing_md"
+                android:src="@drawable/ic_visibility"
+                android:contentDescription="@string/toggle_password_visibility"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="2dp" />
+        </RelativeLayout>
+
+        <!-- Remember Me & Forgot Password Row -->
+        <CheckBox
+            android:id="@+id/cbRememberMe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_lg"
+            android:layout_marginTop="@dimen/spacing_sm"
+            android:text="@string/remember_me"
+            android:textAppearance="@style/TextAppearance.SpeakUp.Caption"
+            android:buttonTint="@color/primary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/passwordContainer" />
+
+        <TextView
+            android:id="@+id/tvForgotPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_lg"
+            android:text="@string/forgot_password"
+            android:textAppearance="@style/TextAppearance.SpeakUp.Caption"
+            android:textColor="@color/primary"
+            android:textStyle="bold"
+            android:background="?attr/selectableItemBackground"
+            android:padding="@dimen/spacing_sm"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/cbRememberMe"
+            app:layout_constraintBottom_toBottomOf="@id/cbRememberMe" />
+
+        <!-- Login Button -->
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height_lg"
+            android:layout_marginStart="@dimen/spacing_lg"
+            android:layout_marginEnd="@dimen/spacing_lg"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:text="@string/login_now"
+            android:textAppearance="@style/TextAppearance.SpeakUp.Body"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:background="@drawable/bg_button_primary"
+            android:elevation="@dimen/elevation_md"
+            android:drawableEnd="@drawable/ic_arrow_forward"
+            android:drawablePadding="@dimen/spacing_sm"
+            android:paddingStart="@dimen/spacing_lg"
+            android:paddingEnd="@dimen/spacing_lg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cbRememberMe" />
+
+        <!-- Divider -->
+        <View
+            android:id="@+id/dividerLeft"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/spacing_lg"
+            android:layout_marginEnd="@dimen/spacing_md"
+            android:layout_marginTop="@dimen/spacing_lg"
+            android:background="@color/divider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvDivider"
+            app:layout_constraintTop_toBottomOf="@id/btnLogin"
+            app:layout_constraintBottom_toBottomOf="@id/tvDivider" />
+
+        <TextView
+            android:id="@+id/tvDivider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_lg"
+            android:text="@string/or_continue_with"
+            android:textAppearance="@style/TextAppearance.SpeakUp.Caption"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnLogin" />
+
+        <View
+            android:id="@+id/dividerRight"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/spacing_md"
+            android:layout_marginEnd="@dimen/spacing_lg"
+            android:background="@color/divider"
+            app:layout_constraintStart_toEndOf="@id/tvDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvDivider"
+            app:layout_constraintBottom_toBottomOf="@id/tvDivider" />
+
+        <!-- Google Sign In Button -->
+        <Button
+            android:id="@+id/btnGoogleSignIn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height_lg"
+            android:layout_marginStart="@dimen/spacing_lg"
+            android:layout_marginEnd="@dimen/spacing_lg"
+            android:layout_marginTop="@dimen/spacing_lg"
+            android:text="@string/google_account"
+            android:textAppearance="@style/TextAppearance.SpeakUp.Body"
+            android:textColor="@color/text_dark"
+            android:textStyle="bold"
+            android:background="@drawable/bg_button_secondary"
+            android:elevation="2dp"
+            app:backgroundTint="@null"
+            app:icon="@drawable/ic_google"
+            app:iconGravity="textStart"
+            app:iconPadding="12dp"
+            app:iconTint="@null"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDivider" />
+
+        <!-- Footer -->
+        <TextView
+            android:id="@+id/tvFooter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xl"
+            android:text="@string/dont_have_account"
+            android:textAppearance="@style/TextAppearance.SpeakUp.Caption"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnGoogleSignIn" />
+
+
+        <TextView
+            android:id="@+id/tvSignUpLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="@string/sign_up"
+            android:textAppearance="@style/TextAppearance.SpeakUp.Caption"
+            android:textColor="@color/primary"
+            android:textStyle="bold"
+            android:background="?attr/selectableItemBackground"
+            android:padding="@dimen/spacing_sm"
+            app:layout_constraintStart_toEndOf="@id/tvFooter"
+            app:layout_constraintTop_toTopOf="@id/tvFooter"
+            app:layout_constraintBottom_toBottomOf="@id/tvFooter" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
