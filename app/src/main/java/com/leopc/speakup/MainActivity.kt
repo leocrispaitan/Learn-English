@@ -1,24 +1,36 @@
 package com.leopc.speakup
 
 import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.ui.Modifier
+import androidx.navigation.compose.rememberNavController
+import com.google.firebase.auth.FirebaseAuth
+import com.leopc.speakup.ui.navigation.MainNavigation
+import com.leopc.speakup.ui.theme.SpeakUpTheme
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        
+        // Get user data from Firebase
+        val currentUser = FirebaseAuth.getInstance().currentUser
+        val userName = currentUser?.displayName ?: intent.getStringExtra("USER_NAME") ?: "User"
+        val userPhotoUrl = currentUser?.photoUrl?.toString()
+        
+        setContent {
+            SpeakUpTheme {
+                val navController = rememberNavController()
+                MainNavigation(
+                    navController = navController,
+                    userName = userName,
+                    userPhotoUrl = userPhotoUrl,
+                    modifier = Modifier.fillMaxSize()
+                )
+            }
         }
-
-        val userName = intent.getStringExtra("USER_NAME") ?: "User"
-        val tvWelcome = findViewById<android.widget.TextView>(R.id.tvWelcomeUser)
-        tvWelcome.text = "Welcome, $userName!"
     }
 }
