@@ -7,12 +7,16 @@ import androidx.compose.material.icons.outlined.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.leopc.speakup.ui.components.BottomNavItem
 import com.leopc.speakup.ui.components.SpeakUpBottomNavigation
+import com.leopc.speakup.ui.exercises.ExerciseScreen
+import com.leopc.speakup.ui.exercises.ExerciseViewModel
 import com.leopc.speakup.ui.home.*
 
 @Composable
@@ -24,7 +28,11 @@ fun MainNavigation(
 ) {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route ?: Screen.Home.route
-    
+
+    // Single ViewModel instance shared across Home and Exercise screens
+    val exerciseViewModel: ExerciseViewModel = viewModel()
+    val uiState by exerciseViewModel.uiState.collectAsStateWithLifecycle()
+
     val bottomNavItems = listOf(
         BottomNavItem(
             route = Screen.Home.route,
@@ -99,23 +107,28 @@ fun MainNavigation(
             }
         )
     )
-    
+
+    // Hide bottom navigation on the exercises screen for full immersion
+    val showBottomBar = currentRoute != Screen.Exercises.route
+
     Scaffold(
         modifier = modifier,
         bottomBar = {
-            SpeakUpBottomNavigation(
-                items = bottomNavItems,
-                selectedRoute = currentRoute,
-                onItemSelected = { route ->
-                    navController.navigate(route) {
-                        popUpTo(Screen.Home.route) {
-                            saveState = true
+            if (showBottomBar) {
+                SpeakUpBottomNavigation(
+                    items = bottomNavItems,
+                    selectedRoute = currentRoute,
+                    onItemSelected = { route ->
+                        navController.navigate(route) {
+                            popUpTo(Screen.Home.route) {
+                                saveState = true
+                            }
+                            launchSingleTop = true
+                            restoreState = true
                         }
-                        launchSingleTop = true
-                        restoreState = true
                     }
-                }
-            )
+                )
+            }
         }
     ) { paddingValues ->
         NavHost(
@@ -126,7 +139,17 @@ fun MainNavigation(
             composable(Screen.Home.route) {
                 HomeScreen(
                     userName = userName,
-                    userPhotoUrl = userPhotoUrl
+                    userPhotoUrl = userPhotoUrl,
+                    xpPoints = uiState.xpPoints,
+                    currentLevel = uiState.currentLevel,
+                    levelName = uiState.levelName,
+                    levelProgressRatio = uiState.levelProgressRatio,
+                    completedMinutes = uiState.completedMinutes,
+                    totalMinutes = uiState.totalExercisesInLevel.coerceAtLeast(1),
+                    streakDays = 0, // TODO: implement streak tracking in a future iteration
+                    onStartExercises = {
+                        navController.navigate(Screen.Exercises.route)
+                    }
                 )
             }
             composable(Screen.Library.route) {
@@ -137,6 +160,12 @@ fun MainNavigation(
             }
             composable(Screen.Profile.route) {
                 ProfileScreen()
+            }
+            composable(Screen.Exercises.route) {
+                ExerciseScreen(
+                    viewModel = exerciseViewModel,
+                    onNavigateBack = { navController.popBackStack() }
+                )
             }
         }
     }

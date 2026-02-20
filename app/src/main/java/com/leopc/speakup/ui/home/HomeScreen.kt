@@ -31,7 +31,15 @@ import com.leopc.speakup.ui.theme.OrangeFlame
 fun HomeScreen(
     userName: String = "User",
     userPhotoUrl: String? = null,
+    xpPoints: Int = 0,
+    currentLevel: Int = 1,
+    levelName: String = "A1",
+    levelProgressRatio: Float = 0f,
+    completedMinutes: Int = 0,
+    totalMinutes: Int = 5,
+    streakDays: Int = 0,
     onNotificationClick: () -> Unit = {},
+    onStartExercises: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     Scaffold(
@@ -136,8 +144,8 @@ fun HomeScreen(
                         )
                     },
                     title = "Streak",
-                    value = "5 Days",
-                    subtitle = "+1 Today",
+                    value = if (streakDays == 1) "$streakDays Day" else "$streakDays Days",
+                    subtitle = if (streakDays > 0) "+1 Today" else "Start today!",
                     subtitleColor = GreenSuccess,
                     modifier = Modifier.weight(1f)
                 )
@@ -152,8 +160,8 @@ fun HomeScreen(
                         )
                     },
                     title = "XP Points",
-                    value = "1,250",
-                    subtitle = "Rank #12",
+                    value = xpPoints.toString(),
+                    subtitle = "Level $currentLevel · $levelName",
                     subtitleColor = MaterialTheme.colorScheme.primary,
                     modifier = Modifier.weight(1f)
                 )
@@ -185,9 +193,9 @@ fun HomeScreen(
                     )
                     
                     CircularProgressIndicator(
-                        percentage = 0.75f,
-                        currentMinutes = 15,
-                        totalMinutes = 20
+                        percentage = levelProgressRatio,
+                        currentMinutes = completedMinutes,
+                        totalMinutes = totalMinutes
                     )
                     
                     Column(
@@ -195,12 +203,16 @@ fun HomeScreen(
                         verticalArrangement = Arrangement.spacedBy(4.dp)
                     ) {
                         Text(
-                            text = "15 / 20 min",
+                            text = "$completedMinutes / $totalMinutes ejercicios",
                             style = MaterialTheme.typography.titleMedium,
                             fontWeight = FontWeight.SemiBold
                         )
+                        val remaining = (totalMinutes - completedMinutes).coerceAtLeast(0)
                         Text(
-                            text = "Almost there! 5 mins left to reach your goal.",
+                            text = if (remaining == 0)
+                                "¡Nivel completado! Pasando al siguiente… 🎉"
+                            else
+                                "¡Faltan $remaining ejercicios para subir de nivel!",
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurfaceVariant
                         )
@@ -220,11 +232,11 @@ fun HomeScreen(
                 )
                 
                 LearningCard(
-                    level = "Intermediate • Unit 2",
-                    title = "Present Simple",
-                    lesson = "Lesson 3: Daily Routines",
-                    progress = 0.8f,
-                    onClick = { /* TODO: Navigate to lesson */ }
+                    level = "Level $currentLevel · $levelName",
+                    title = "Practice Exercises",
+                    lesson = "Tap to continue your session",
+                    progress = levelProgressRatio,
+                    onClick = onStartExercises
                 )
             }
             
@@ -372,7 +384,7 @@ fun HomeScreen(
                         }
                     }
                     
-                    TextButton(onClick = { /* TODO: Start challenge */ }) {
+                    TextButton(onClick = onStartExercises) {
                         Text(
                             text = "Start",
                             fontWeight = FontWeight.Bold
