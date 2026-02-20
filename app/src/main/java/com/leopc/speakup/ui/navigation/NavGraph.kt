@@ -18,6 +18,7 @@ import com.leopc.speakup.ui.components.SpeakUpBottomNavigation
 import com.leopc.speakup.ui.exercises.ExerciseScreen
 import com.leopc.speakup.ui.exercises.ExerciseViewModel
 import com.leopc.speakup.ui.home.*
+import com.leopc.speakup.ui.profile.ProfileScreen
 
 @Composable
 fun MainNavigation(
@@ -159,7 +160,10 @@ fun MainNavigation(
                 StatsScreen()
             }
             composable(Screen.Profile.route) {
-                ProfileScreen()
+                ProfileScreen(
+                    userName = userName,
+                    userPhotoUrl = userPhotoUrl
+                )
             }
             composable(Screen.Exercises.route) {
                 ExerciseScreen(

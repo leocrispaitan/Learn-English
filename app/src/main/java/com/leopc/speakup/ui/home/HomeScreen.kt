@@ -1,6 +1,7 @@
 package com.leopc.speakup.ui.home
 
 import androidx.compose.animation.*
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -113,6 +114,7 @@ fun HomeScreen(
                         }
                     }
                 },
+                windowInsets = WindowInsets(0, 0, 0, 0),
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.background
                 )
