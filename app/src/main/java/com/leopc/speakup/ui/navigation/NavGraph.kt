@@ -19,6 +19,7 @@ import com.leopc.speakup.ui.exercises.ExerciseScreen
 import com.leopc.speakup.ui.exercises.ExerciseViewModel
 import com.leopc.speakup.ui.home.*
 import com.leopc.speakup.ui.profile.ProfileScreen
+import com.leopc.speakup.ui.settings.SettingsScreen
 
 @Composable
 fun MainNavigation(
@@ -110,7 +111,8 @@ fun MainNavigation(
     )
 
     // Hide bottom navigation on the exercises screen for full immersion
-    val showBottomBar = currentRoute != Screen.Exercises.route
+    val showBottomBar = currentRoute != Screen.Exercises.route &&
+            currentRoute != Screen.Settings.route
 
     Scaffold(
         modifier = modifier,
@@ -162,8 +164,14 @@ fun MainNavigation(
             composable(Screen.Profile.route) {
                 ProfileScreen(
                     userName = userName,
-                    userPhotoUrl = userPhotoUrl
+                    userPhotoUrl = userPhotoUrl,
+                    onNavigateToSettings = {
+                        navController.navigate(Screen.Settings.route)
+                    }
                 )
+            }
+            composable(Screen.Settings.route) {
+                SettingsScreen(onBack = { navController.popBackStack() })
             }
             composable(Screen.Exercises.route) {
                 ExerciseScreen(

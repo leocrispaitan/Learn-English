@@ -52,6 +52,7 @@ fun ProfileScreen(
     dayStreak: Int = 12,
     wordsLearned: Int = 1240,
     lessonsCompleted: Int = 45,
+    onNavigateToSettings: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     val goals = listOf(
@@ -99,7 +100,7 @@ fun ProfileScreen(
                     )
                 },
                 actions = {
-                    IconButton(onClick = { /* Settings */ }) {
+                    IconButton(onClick = onNavigateToSettings) {
                         Surface(
                             shape = CircleShape,
                             color = MaterialTheme.colorScheme.surfaceVariant,
