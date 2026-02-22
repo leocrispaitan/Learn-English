@@ -39,4 +39,8 @@
     <!-- Shadow & Overlay -->
     <color name="shadow">#1A000000</color>
     <color name="overlay">#80000000</color>
+
+    <!-- Splash Screen Colors -->
+    <color name="splash_background">#1A237E</color>
+    <color name="splash_gold">#FFD700</color>
 </resources>

@@ -13,23 +13,22 @@
         android:name="androidx.multidex.MultiDexApplication"
         android:theme="@style/Theme.SpeakUp">
         
-        <!-- Login Activity - Entry Point -->
+        <!-- Login Activity -->
         <activity
             android:name=".ui.auth.LoginActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        
+        <!-- Main Activity - Entry Point / Splash & Dashboard -->
+        <activity
+            android:name=".MainActivity"
             android:exported="true"
-            android:screenOrientation="portrait">
+            android:theme="@style/Theme.App.Starting">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            
-
         </activity>
-        
-        <!-- Main Activity - Dashboard (Future) -->
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
     </application>
 
 </manifest>

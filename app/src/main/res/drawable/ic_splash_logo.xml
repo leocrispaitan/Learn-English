@@ -1,0 +1,157 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- 
+      Para que el logo se vea profesional y NO se corte en Android 12+, 
+      el contenido debe estar dentro de un círculo "safe zone" de 72dp.
+      He aplicado una escala de 0.75 y centrado el contenido.
+    -->
+    <group
+        android:pivotX="54"
+        android:pivotY="54"
+        android:scaleX="0.75"
+        android:scaleY="0.75"
+        android:translateX="0"
+        android:translateY="6">
+
+        <!-- ===== Book base shadow / glow ===== -->
+        <path
+            android:fillColor="#33FFD700"
+            android:pathData="M54,72 C34,72 20,66 20,66 L20,38 C20,38 34,44 54,44 C74,44 88,38 88,38 L88,66 C88,66 74,72 54,72 Z" />
+
+        <!-- ===== Book left page ===== -->
+        <path
+            android:fillColor="#FFD700"
+            android:pathData="M54,68 C42,68 24,63 22,61 L22,38 C24,40 42,45 54,45 Z" />
+
+        <!-- ===== Book right page ===== -->
+        <path
+            android:fillColor="#FFC400"
+            android:pathData="M54,68 C66,68 84,63 86,61 L86,38 C84,40 66,45 54,45 Z" />
+
+        <!-- ===== Book spine / center line ===== -->
+        <path
+            android:strokeColor="#1A237E"
+            android:strokeWidth="1.5"
+            android:strokeLineCap="round"
+            android:fillColor="#00000000"
+            android:pathData="M54,68 L54,45" />
+
+        <!-- ===== Book bottom edge ===== -->
+        <path
+            android:fillColor="#E6AC00"
+            android:pathData="M22,61 C24,63 42,68 54,68 C66,68 84,63 86,61 L86,65 C84,67 66,72 54,72 C42,72 24,67 22,65 Z" />
+
+        <!-- ===== Lines on left page (text lines) ===== -->
+        <path
+            android:strokeColor="#1A237E"
+            android:strokeWidth="1.2"
+            android:strokeLineCap="round"
+            android:fillColor="#00000000"
+            android:pathData="M30,50 L50,52" />
+        <path
+            android:strokeColor="#1A237E"
+            android:strokeWidth="1.2"
+            android:strokeLineCap="round"
+            android:fillColor="#00000000"
+            android:pathData="M30,55 L50,57" />
+        <path
+            android:strokeColor="#1A237E"
+            android:strokeWidth="1.2"
+            android:strokeLineCap="round"
+            android:fillColor="#00000000"
+            android:pathData="M30,60 L46,62" />
+
+        <!-- ===== Lines on right page (text lines) ===== -->
+        <path
+            android:strokeColor="#1A237E"
+            android:strokeWidth="1.2"
+            android:strokeLineCap="round"
+            android:fillColor="#00000000"
+            android:pathData="M58,52 L78,50" />
+        <path
+            android:strokeColor="#1A237E"
+            android:strokeWidth="1.2"
+            android:strokeLineCap="round"
+            android:fillColor="#00000000"
+            android:pathData="M58,57 L78,55" />
+        <path
+            android:strokeColor="#1A237E"
+            android:strokeWidth="1.2"
+            android:strokeLineCap="round"
+            android:fillColor="#00000000"
+            android:pathData="M58,62 L74,60" />
+
+        <!-- ===== Mortarboard / Cap board ===== -->
+        <path
+            android:fillColor="#FFD700"
+            android:pathData="M54,20 L76,29 L54,38 L32,29 Z" />
+
+        <!-- ===== Cap top highlight ===== -->
+        <path
+            android:fillColor="#FFE566"
+            android:pathData="M54,20 L76,29 L54,30 L32,29 Z" />
+
+        <!-- ===== Cap center button ===== -->
+        <path
+            android:fillColor="#1A237E"
+            android:pathData="M54,27 C55.1,27 56,27.9 56,29 C56,30.1 55.1,31 54,31 C52.9,31 52,30.1 52,29 C52,27.9 52.9,27 54,27 Z" />
+
+        <!-- ===== Tassel string ===== -->
+        <path
+            android:strokeColor="#FFD700"
+            android:strokeWidth="1.5"
+            android:strokeLineCap="round"
+            android:fillColor="#00000000"
+            android:pathData="M76,29 L76,36 Q76,39 79,39" />
+
+        <!-- ===== Tassel end ===== -->
+        <path
+            android:fillColor="#FFD700"
+            android:pathData="M77,38 C77,36.9 78.3,36 79,36 C79.7,36 81,36.9 81,38 L81,42 C81,43.1 79.7,44 79,44 C78.3,44 77,43.1 77,42 Z" />
+
+        <!-- ===== Tassel fringe ===== -->
+        <path
+            android:strokeColor="#FFC400"
+            android:strokeWidth="1"
+            android:strokeLineCap="round"
+            android:fillColor="#00000000"
+            android:pathData="M77,42 L75,46" />
+        <path
+            android:strokeColor="#FFC400"
+            android:strokeWidth="1"
+            android:strokeLineCap="round"
+            android:fillColor="#00000000"
+            android:pathData="M79,43 L79,47" />
+        <path
+            android:strokeColor="#FFC400"
+            android:strokeWidth="1"
+            android:strokeLineCap="round"
+            android:fillColor="#00000000"
+            android:pathData="M81,42 L83,46" />
+
+        <!-- ===== Star sparkle top-left ===== -->
+        <path
+            android:fillColor="#FFD700"
+            android:pathData="M18,22 L19.3,25.3 L22.6,26.6 L19.3,27.9 L18,31.2 L16.7,27.9 L13.4,26.6 L16.7,25.3 Z" />
+
+        <!-- ===== Star sparkle small top-right ===== -->
+        <path
+            android:fillColor="#FFE566"
+            android:pathData="M88,18 L88.9,20.4 L91.3,21.3 L88.9,22.2 L88,24.6 L87.1,22.2 L84.7,21.3 L87.1,20.4 Z" />
+
+        <!-- ===== Star sparkle small bottom-left ===== -->
+        <path
+            android:fillColor="#FFE566"
+            android:pathData="M16,74 L16.7,75.9 L18.6,76.6 L16.7,77.3 L16,79.2 L15.3,77.3 L13.4,76.6 L15.3,75.9 Z" />
+
+        <!-- ===== Star sparkle right ===== -->
+        <path
+            android:fillColor="#FFD700"
+            android:pathData="M91,55 L91.9,57.4 L94.3,58.3 L91.9,59.2 L91,61.6 L90.1,59.2 L87.7,58.3 L90.1,57.4 Z" />
+    </group>
+
+</vector>
